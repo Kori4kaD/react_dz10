@@ -1,13 +1,27 @@
-//import { translate } from "../../share/translate";
 import styles from "./Header.module.css";
+import React from "react";
+import { useAuth } from "../AuthContext";
 
-export default function Header({ lang, changeLang }) {
+const Header = () => {
+  const { isAuthenticated, toggleAuthentication } = useAuth();
+
   return (
     <header>
       <div className={`container ${styles.headerContainer}`}>
-        <button onClick={() => changeLang()}>Change Lang</button>
-        <span>{lang}</span>
+        {isAuthenticated ? (
+          <>
+            <h3>Hello, user!</h3>
+            <button onClick={toggleAuthentication}>Logout</button>
+          </>
+        ) : (
+          <>
+            <h3>Please, login!</h3>
+            <button onClick={toggleAuthentication}>Login</button>
+          </>
+        )}
       </div>
     </header>
   );
-}
+};
+
+export default Header;

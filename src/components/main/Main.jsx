@@ -1,13 +1,10 @@
-export default function Main({ lang, data }) {
+import pict from './pngwing.com.png';
+export default function Main() {
   return (
     <main>
       <div className="container">
         <div className="list">
-          {data[lang].map((item, i) => (
-            <div key={`item-${i + 1}`}>
-              <p>{item}</p>
-            </div>
-          ))}
+          <img src={pict} alt='pict' width={'400px'}/>
         </div>
       </div>
     </main>

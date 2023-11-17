@@ -26,6 +26,9 @@ footer {
   background-color: var(--light);
   padding: 20px 0;
 }
+main{
+  height: 76vh;
+}
 section {
   padding: 40px 0;
 }
@@ -57,4 +60,17 @@ span {
   border-bottom: 1px solid blue;
   width: 30vw;
   padding: 10px;
+}
+button {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover{
+  /* background-color: aqua; */
+  transform: scale(1.1);
+  
 }
